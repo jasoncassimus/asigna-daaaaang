@@ -3,6 +3,7 @@ from lib.models.enums import ExitType
 
 rooms = {}
 
+
 def add_room(room: Room):
     rooms[room.name] = room
 

@@ -1,36 +1,17 @@
 #!/usr/bin/env python
-
-"""A simple Multi-User Dungeon (MUD) game. Players can talk to each
-other, examine their surroundings and move between rooms.
-
-Some ideas for things to try adding:
-    * More rooms to explore
-    * An 'emote' command e.g. 'emote laughs out loud' -> 'Mark laughs
-        out loud'
-    * A 'whisper' command for talking to individual players
-    * A 'shout' command for yelling to players in all rooms
-    * Items to look at in rooms e.g. 'look fireplace' -> 'You see a
-        roaring, glowing fire'
-    * Items to pick up e.g. 'take rock' -> 'You pick up the rock'
-    * Monsters to fight
-    * Loot to collect
-    * Saving players accounts between sessions
-    * A password login
-    * A shop from which to buy items
-
-author: Mark Frimston - mfrimston@gmail.com
-"""
-
 import time
-
+import os, sys
+import threading
 from game_data import rooms
 from mudserver import MudServer
 from lib.constants import DEFAULT_START_LOCATION
 from lib.command import Commands
 from lib.models.game_state import GameState
 
+
 game = GameState(MudServer())
 commands = Commands(game)
+
 
 # main game loop. We loop forever (i.e. until the program is terminated)
 while True:

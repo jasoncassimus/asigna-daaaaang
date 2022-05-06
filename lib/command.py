@@ -19,6 +19,8 @@ class Commands(object):
             "look": self.look,
             "go": self.go,
             "tell": self.tell,
+            "score": self.score,
+            "save": self.save,
         }
 
     def execute_command(self, player, command, param):
@@ -40,6 +42,13 @@ class Commands(object):
             if other_player._location == player._location:
                 # send them a message telling them what the player said
                 other_player.message(f"{player.name} says: {message}")
+
+    def save(self, player: Player, params=None):
+
+
+    def score(self, player: Player, params=None):
+        message = player.current_hp
+        player.message(f"Your current hp is: {message}")
 
     def tell(self, player: Player, params):
         """ tell <player> message - Whisper a private message to the target player."""

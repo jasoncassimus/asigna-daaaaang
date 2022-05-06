@@ -41,3 +41,4 @@ class Player(Creature, ABC):
         super().move(destination)
         self.message(f"You arrive at '{self._location}'")
         self.message(rooms[self._location].description)
+
