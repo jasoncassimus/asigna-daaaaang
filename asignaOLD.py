@@ -1,4 +1,3 @@
-
 import World
 
 from User import *
@@ -13,7 +12,6 @@ from mudserver import MudServer
 from lib.constants import DEFAULT_START_LOCATION
 from lib.command import Commands
 from lib.models.game_state import GameState
-
 
 gameloop = None
 lock = threading.Lock()
@@ -50,18 +48,18 @@ def menu():
     handle_input(choice)
 
 
-def zero():     #0) Big Bang the World
+def zero():  # 0) Big Bang the World
     globals.world = None
     globals.world = World()
 
 
-def one():      # 1) Start/Restart Service
+def one():  # 1) Start/Restart Service
     globals.server = None
     globals.server = Server()
     globals.server.start()
 
 
-def two():      # 2) Stop Serving Asigna Mud
+def two():  # 2) Stop Serving Asigna Mud
     pass
 
 
