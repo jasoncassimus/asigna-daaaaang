@@ -44,8 +44,10 @@ class Commands(object):
                 other_player.message(f"{player.name} says: {message}")
 
     def score(self, player: Player, params=None):
-        message = player.current_hp
-        player.message(f"Your current hp is: {message}")
+        hp = player.current_hp
+        level = player.level
+        player.message(f"Your current level is: {level}")
+        player.message(f"Your current hp is: {hp}")
 
     def tell(self, player: Player, params):
         """ tell <player> message - Whisper a private message to the target player."""
@@ -69,7 +71,7 @@ class Commands(object):
 
     def levelup(self, player: Player, params=None):
         if player.level < 23:
-            player.max_hp += player.max_hp + 9
+            player.max_hp = player.max_hp + player.level + 9
             player.level += 1
             player.current_hp = player.max_hp
 
