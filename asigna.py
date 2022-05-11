@@ -9,7 +9,7 @@ from lib.command import Commands
 from lib.models.game_state import GameState
 
 lock = threading.Lock()
-gameloop = None
+global gameloop
 game = GameState(MudServer())
 commands = Commands(game)
 

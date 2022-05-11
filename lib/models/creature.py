@@ -10,6 +10,7 @@ from lib.models.enums import Ability, Skill, Alignment
 
 class Creature(Entity):
 
+    _HERO_LEVEL = 23
     _DEFAULT_LEVEL = 0
     _DEFAULT_XP = 0
     _DEFAULT_HP = 1

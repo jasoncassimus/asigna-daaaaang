@@ -1,7 +1,7 @@
 import uuid
 
 from typing import List, Dict
-
+from dataclasses import dataclass
 from lib.models.enums import ExitType, LightLevel, Obscuration
 
 

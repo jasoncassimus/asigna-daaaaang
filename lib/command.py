@@ -20,6 +20,7 @@ class Commands(object):
             "go": self.go,
             "tell": self.tell,
             "score": self.score,
+            "levelup": self.levelup,
         }
 
     def execute_command(self, player, command, param):
@@ -65,6 +66,12 @@ class Commands(object):
         for command in self.commands.values():
             if command.__doc__ is not None:
                 player.message(command.__doc__)
+
+    def levelup(self, player: Player, params=None):
+        if player.level < 23:
+            player.max_hp += player.max_hp + 9
+            player.level += 1
+            player.current_hp = player.max_hp
 
     def look(self, player: Player, params=None):
         """  look           - Examines the surroundings, e.g. 'look'"""

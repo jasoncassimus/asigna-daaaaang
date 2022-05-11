@@ -33,7 +33,6 @@ class Player(Creature, ABC):
 
         super().__init__()
 
-
     def message(self, message):
         self.server.send_message(self.client.uuid, message)
 
