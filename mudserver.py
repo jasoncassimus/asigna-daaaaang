@@ -36,7 +36,7 @@ class MudServer(object):
     # list of newly-added occurrences
     _new_events = []
 
-    def __init__(self, interface="192.168.1.5", port=1234):
+
 #   def __init__(self, interface="0.0.0.0", port=1234):
         """Constructs the MudServer object and starts listening for
         new players.
